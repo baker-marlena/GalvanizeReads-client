@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const API_URL = "http://localhost:3000/"
+  const API_URL = "https://shrouded-spire-22810.herokuapp.com/"
 
   $.get(`${API_URL}books`, data=>{
     console.log(data)
