@@ -20,17 +20,25 @@ $(document).ready(function() {
 
   $("#newbook-form").submit((event)=>{
     event.preventDefault();
-    let title = validateTitle();
-    let genre = validateGenre();
-    let cover_url = validateURL();
-    let description = validateDescription();
+    let book = {
+      title: validateTitle(),
+      genre: validateGenre(),
+      cover_url: validateURL(),
+      description: validateDescription()
+  }
     if (title == false || genre == false || cover_url == false || description == false) {
       alert("Please make sure the form is complete with a valid URL before submitting.")
     }
     else{
-      let authors = $("#authors");
+      sendBook(book);
     }
   })
+
+  function sendBook(book) {
+    $.post(`${API_URL}newbook`, (result) => {
+      console.log(result)
+    })
+  }
 
   function validateTitle(){
     let title = $("#title").val()
