@@ -1,5 +1,10 @@
 $(document).ready(function() {
-  const API_URL = "https://shrouded-spire-22810.herokuapp.com/"
+  const API_URL = () => {
+    if (window.location.hostname == "localhost"){
+      return "http://localhost:3000/"
+    }
+    return "https://shrouded-spire-22810.herokuapp.com/"
+  }
 
   // $.get(`${API_URL}newbook`, (data) => {
   //   data.forEach(author=>{
