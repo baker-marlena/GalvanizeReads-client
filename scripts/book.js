@@ -1,10 +1,5 @@
 $(document).ready(function() {
-  const API_URL = () => {
-    if (window.location.hostname == "localhost"){
-      return "http://localhost:3000/"
-    }
-    return "https://shrouded-spire-22810.herokuapp.com/"
-  }
+  const API_URL = "https://shrouded-spire-22810.herokuapp.com/"
 
 $.get(`${API_URL}books`, data=>{
     data.forEach(book=>{
@@ -29,8 +24,12 @@ $.get(`${API_URL}books`, data=>{
 })
 
 function deleteBook(id, url) {
+  console.log("delete firing")
   $.ajax({
     url:`${url}delete/${id}`,
     type: 'DELETE'
+  })
+  .then(()=>{
+    window.location.reload();
   })
 }
