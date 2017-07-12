@@ -26,6 +26,7 @@ $(document).ready(function() {
       cover_url: validateURL(),
       description: validateDescription()
   }
+  console.log(book)
     if (title == false || genre == false || cover_url == false || description == false) {
       alert("Please make sure the form is complete with a valid URL before submitting.")
     }
@@ -35,7 +36,7 @@ $(document).ready(function() {
   })
 
   function sendBook(book) {
-    $.post(`${API_URL}newbook`, (result) => {
+    $.post(`${API_URL}newbook`, book, (result) => {
       console.log(result)
     })
   }
@@ -60,7 +61,6 @@ $(document).ready(function() {
 
   function validateURL(){
     let url = $("#cover_url").val()
-    console.log(url)
     let urlTest = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
     let existsURL = url.trim() !== ""
     let validURL = urlTest.test(url);
