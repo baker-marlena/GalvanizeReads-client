@@ -26,7 +26,6 @@ $(document).ready(function() {
       cover_url: validateURL(),
       description: validateDescription()
   }
-  console.log(book)
     if (title == false || genre == false || cover_url == false || description == false) {
       alert("Please make sure the form is complete with a valid URL before submitting.")
     }
@@ -37,7 +36,7 @@ $(document).ready(function() {
 
   function sendBook(book) {
     $.post(`${API_URL}newbook`, book, (result) => {
-      console.log(result)
+      console.log('success')
     })
   }
 
