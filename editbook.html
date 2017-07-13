@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Galvanize Reads</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/css/ink.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <header class="vertical-space">
+      <h1><img src="assets/galvanizereadslogo.png" alt="Galvanize Reads" class="header-img horizontal-space"><small>Galvanize Reads</small></h1>
+      </header>
+      <nav class="ink-navigation">
+        <ul class="menu horizontal orange horizontal-space">
+          <li><a href="book.html">Book List</a></li>
+          <li><a href="newbook.html">Add a Book</a></li>
+        </ul>
+      </nav>
+      <main class="horizontal-space vertical-space column-group">
+        <form class="ink-form all-70 push-right" id="editbook-form">
+          <div class="control-group">
+            <label for="editTitle">Title</label>
+            <div class="control">
+              <input id="editTitle" name="editTitle" type="text" value="">
+            </div>
+            <label for="editGenre">Genre</label>
+            <div class="control">
+              <input id="editGenre" name="editGenre" type="text">
+            </div>
+            <label for="editCover_url">Cover Image URL</label>
+            <div class="control">
+              <input id="editCover_url" name="editCover_url" type="text">
+            </div>
+            <label for="editDescription">Description</label>
+            <div class="control">
+              <input id="editDescription" name="editDescription" type="textarea" wrap="soft">
+            </div>
+            <label for="editAuthors">Authors</label>
+              <ul id="editAuthors">
+
+              </ul>
+            <div class="control-group">
+              <div class="control append-button" role="author-selector">
+               <span>
+                 <select name="author-selector" id="author-selector">
+                   <option value="test">test</option>
+                 </select>
+               </span>
+               <button class="ink-button" id="add-author-button">Add Author</button>
+             </div>
+           </div>
+           <button type="submit" class="ink-button all-100" id="edit-book-submit">Edit Book</button>
+          </div>
+        </form>
+      </main>
+    <!-- scripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/js/ink-all.min.js"></script>
+      <script src="scripts/main.js" charset="utf-8"></script>
+      <script src="scripts/editbook.js" charset="utf-8"></script>
+  </body>
+</html>

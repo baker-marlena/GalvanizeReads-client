@@ -13,9 +13,6 @@ $.get(`${API_URL}books`, data=>{
         "ID": book.id
       }
       $(".book-list").append(bookTemplate(bookContext))
-      $(`.edit-${book.id}-button`).click((event) => {
-        window.location.replace(`editbook.html?id=${book.id}`)
-      })
       $(`.delete-${book.id}-button`).click((event) => {
         deleteBook(book.id, API_URL);
       })
