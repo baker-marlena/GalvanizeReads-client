@@ -12,47 +12,50 @@
       </header>
       <nav class="ink-navigation">
         <ul class="menu horizontal orange horizontal-space">
+          <li><a href="books.html">Book List</a></li>
           <li><a href="newbook.html">Add a Book</a></li>
         </ul>
       </nav>
-      <main class="ink-grid">
-        <div class="column-group">
-          <div class="all-20">
+      <main>
+        <main class="ink-grid">
+          <div class="column-group">
+            <div class="all-20">
 
-          </div>
-          <div class="all-80 book-list">
-
-          </div>
-        </div>
-      </main>
-    <!-- Templates -->
-      <script id="book-template" type="text/x-handlebars-template">
-        <div class="column-group horizontal-gutters vertical-space">
-          <div class="all-30 book-cover">
-            <img src="{{COVER_URL}}" alt="{{TITLE}}" class="book-cover-img"/>
-          </div>
-          <div class="all-70 book-info">
-            <div class="column-group">
-              <div class="all-80">
-                <h3 class="book-title">{{TITLE}}</h3>
-                <!-- <h6 class="book-authors">By {{AUTHORS}}</h6> -->
-                <p><em>{{GENRE}}</em></p>
-              </div>
-              <div class="all-20 column-group">
-                <a href="editbook.html?id={{ID}}"><button class="ink-button all-40 edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                <button class="ink-button all-40 delete-{{ID}}-button"><i class="fa fa-minus-square-o" aria-hidden="true"></i></button>
-              </div>
             </div>
+            <div class="all-80 book-list">
 
-            <p>{{DESCRIPTION}}</p>
+            </div>
           </div>
-        </div>
-      </script>
+        </main>
+      <!-- Templates -->
+        <script id="single-book-template" type="text/x-handlebars-template">
+          <div class="column-group horizontal-gutters vertical-space">
+            <div class="all-30 book-cover">
+              <img src="{{COVER_URL}}" alt="{{TITLE}}" class="book-cover-img"/>
+            </div>
+            <div class="all-70 book-info">
+              <div class="column-group">
+                <div class="all-80">
+                  <h3 class="book-title">{{TITLE}}</h3>
+                  <!-- <h6 class="book-authors">By {{AUTHORS}}</h6> -->
+                  <p><em>{{GENRE}}</em></p>
+                </div>
+                <div class="all-20 column-group">
+                  <a href="editbook.html?id={{ID}}"><button class="ink-button all-40 edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                  <button class="ink-button all-40 delete-{{ID}}-button"><i class="fa fa-minus-square-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <p>{{DESCRIPTION}}</p>
+            </div>
+          </div>
+        </script>
+      </main>
     <!-- scripts -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/js/ink-all.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" charset="utf-8"></script>
-      <script src="https://use.fontawesome.com/157d1a8f63.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/js/ink-all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" charset="utf-8"></script>
+    <script src="https://use.fontawesome.com/157d1a8f63.js"></script>
       <script src="scripts/main.js" charset="utf-8"></script>
       <script src="scripts/book.js" charset="utf-8"></script>
   </body>

@@ -1,22 +1,21 @@
 $(document).ready(function() {
   const API_URL = "https://shrouded-spire-22810.herokuapp.com/"
+  let id = parseQueryString(window.location.search)
 
-$.get(`${API_URL}books`, data=>{
-    data.forEach(book=>{
-      let bookSource = $("#book-template").html();
+$.get(`${API_URL}book/${id}`, data=>{
+      let bookSource = $("#single-book-template").html();
       let bookTemplate = Handlebars.compile(bookSource);
       let bookContext = {
-        "TITLE": book.title,
-        "GENRE": book.genre,
-        "DESCRIPTION": book.description,
-        "COVER_URL": book.cover_url,
-        "ID": book.id
+        "TITLE": data.title,
+        "GENRE": data.genre,
+        "DESCRIPTION": data.description,
+        "COVER_URL": data.cover_url,
+        "ID": data.id
       }
       $(".book-list").append(bookTemplate(bookContext))
-      $(`.delete-${book.id}-button`).click((event) => {
-        deleteBook(book.id, API_URL);
+      $(`.delete-${data.id}-button`).click((event) => {
+        deleteBook(data.id, API_URL);
       })
-    })
   })
 })
 
@@ -27,6 +26,11 @@ function deleteBook(id, url) {
     type: 'DELETE'
   })
   .then(()=>{
-    window.location.reload();
+    window.location = "books.html"
   })
+}
+
+function parseQueryString(query) {
+  let parse = query.substring(1).split('=')
+  return parse[1];
 }

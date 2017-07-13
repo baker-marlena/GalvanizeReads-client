@@ -1,10 +1,8 @@
 
   const API_URL = "https://shrouded-spire-22810.herokuapp.com/"
   let id = parseQueryString(window.location.search)
-  console.log(id)
 
   $.get(`${API_URL}book/${id}`, (result) => {
-    console.log(result)
     $("#editTitle").val(result.title)
     $("#editGenre").val(result.genre)
     $("#editCover_url").val(result.cover_url)
